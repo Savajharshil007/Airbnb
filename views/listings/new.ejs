@@ -1,0 +1,109 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <br /><br />
+      <h3>Craete New Listing</h3>
+      <form
+        action="/listings"
+        method="post"
+        enctype="multipart/form-data"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="listing[title]"
+            placeholder="Add a matching title"
+            required
+          />
+          <div class="valid-feedback">looks good!</div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="listing[description]"
+            placeholder="enter description"
+            required
+          ></textarea>
+          <div class="invalid-feedback">Description should be valid</div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Listing Image</label>
+          <input
+            type="file"
+            id="image"
+            class="form-control"
+            name="listing[image]"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <select name="listing[category]" id="category" class="form-select">
+            <option value="mountain">choose a value</option>
+            <option value="mountain">mountain</option>
+            <option value="arctic">arctic</option>
+            <option value="amazing pools">amazing pools</option>
+            <option value="camping">camping</option>
+            <option value="castles">castles</option>
+            <option value="iconic cities">iconic cities</option>
+            <option value="rooms">rooms</option>
+            <option value="domes">domes</option>
+            <option value="boats">boats</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input
+              id="price"
+              class="form-control"
+              name="listing[price]"
+              placeholder="enter price"
+              required
+            />
+            <div class="invalid-feedback">Price should be valid</div>
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">country</label>
+            <input
+              type="text"
+              id="country"
+              class="form-control"
+              name="listing[country]"
+              placeholder="enter country"
+              required
+            />
+            <div class="invalid-feedback">Country should be valid</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            id="location"
+            class="form-control"
+            name="listing[location]"
+            placeholder="enter location"
+            required
+          />
+          <div class="invalid-feedback">Location should be valid</div>
+        </div>
+
+        <button type="submit" class="btn btn-dark edit-btn mt-3">Add</button>
+      </form>
+      <br />
+    </div>
+  </div>
+</body>
